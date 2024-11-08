@@ -17,7 +17,7 @@ COPY . .
 # Compilar la aplicación
 # CGO_ENABLED=0 para una compilación estática
 # -ldflags="-w -s" para reducir el tamaño del binario
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o main ./cmd/main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o main ./main.go
 
 # Etapa final
 FROM alpine:3.19
