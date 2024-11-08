@@ -8,8 +8,8 @@ on:
 env:
     AZURE_CONTAINER_REGISTRY: "sampleacrhca"
     CONTAINER_NAME: "go-transacciones"
-    RESOURCE_GROUP: "set-monarch-rg"
-    CLUSTER_NAME: "set-monarch-aks"
+    RESOURCE_GROUP: "comic-ox-rg"
+    CLUSTER_NAME: "comic-ox-aks"
     DEPLOYMENT_MANIFEST_PATH: 'k8s/deployment.yaml'
 
 jobs:
