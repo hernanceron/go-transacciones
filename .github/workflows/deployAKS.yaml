@@ -8,8 +8,8 @@ on:
 env:
     AZURE_CONTAINER_REGISTRY: "sampleacrhca"
     CONTAINER_NAME: "go-transacciones"
-    RESOURCE_GROUP: "free-skink-rg"
-    CLUSTER_NAME: "free-skink-aks"
+    RESOURCE_GROUP: "many-longhorn-rg"
+    CLUSTER_NAME: "many-longhorn-aks"
     DEPLOYMENT_MANIFEST_PATH: 'k8s/deployment.yaml'
 
 jobs:

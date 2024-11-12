@@ -50,11 +50,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: go-transacciones-ingress
-  namespace: ingress-nginx
-  annotations:   
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -63,34 +61,5 @@ spec:
         backend:
           service:
             name: go-transacciones
-            port: 
+            port:
               number: 80
-    # If you want to use a custom domain, add it here
-    # host: your-custom-domain.com
-  # If you want to enable TLS, uncomment the following block and replace the values
-  # tls:
-  # - hosts:
-  #   - your-custom-domain.com
-  #   secretName: tls-secret
----
-# This manifest assumes you have the NGINX Ingress Controller deployed in your AKS cluster
-# If not, you can deploy it using the following command:
-# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: ingress-nginx-controller
-  namespace: ingress-nginx
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 80
-    name: tcp-80
-  - port: 443
-    targetPort: 443
-    name: tcp-443
-  selector:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/component: controller
