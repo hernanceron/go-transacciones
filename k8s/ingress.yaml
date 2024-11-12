@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: go-transacciones-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /transaccciones
+    nginx.ingress.kubernetes.io/rewrite-target: /transacciones
 spec:
   ingressClassName: nginx
   rules:
